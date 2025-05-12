@@ -1,5 +1,5 @@
 import { findModule, DialogButton, Millennium } from "@steambrew/client";
-import { render } from "preact";
+import { render } from "react-dom";
 
 const WaitForElement = async (sel: string, parent = document) =>
 	[...(await Millennium.findElement(parent, sel))][0];
