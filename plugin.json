@@ -1,0 +1,8 @@
+{
+    "$schema": "https://raw.githubusercontent.com/SteamClientHomebrew/Millennium/main/src/sys/plugin-schema.json",
+
+    "name": "make-a-button",
+    "common_name": "make-a-button",
+    "description": "make-a-button",
+    "version": "1.0.0"
+}
