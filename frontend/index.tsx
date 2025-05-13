@@ -36,7 +36,8 @@ async function OnPopupCreation(popup: any) {
                 gameSettingsButton.parentNode.insertBefore(clonedButton, gameSettingsButton.nextSibling);
 
                 console.log("[make-a-button] Creating button by rendering...");
-                const renderedButton = popup.m_popup.document.createElement("div");
+                //const renderedButton = popup.m_popup.document.createElement("div");
+                const renderedButton = popup.m_popup.document.createDocumentFragment();
                 render(<DialogButton>BTN2</DialogButton>, renderedButton);
                 gameSettingsButton.parentNode.insertBefore(renderedButton, gameSettingsButton.nextSibling);
             }
