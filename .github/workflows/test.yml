@@ -14,4 +14,4 @@ jobs:
       - run: npm install -g pnpm
       - run: pnpm install
       - run: pnpm run dev
-      - run: ls ${{ github.workspace }}
+      - run: ls -la ${{ github.workspace }}
