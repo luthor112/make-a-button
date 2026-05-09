@@ -14,4 +14,9 @@ jobs:
       - run: npm install -g pnpm
       - run: pnpm install
       - run: pnpm run dev
+      - uses: thedoctor0/zip-release@0.7.6
+        with:
+          type: 'zip'
+          filename: '${{ github.event.repository.name }}.zip'
+          exclusions: '/.git /.github /node_modules
       - run: ls -la ${{ github.workspace }}
