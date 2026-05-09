@@ -33,5 +33,5 @@ jobs:
           commit: main
           name: '${{steps.version.outputs.prop}} dev build'
           prerelease: true
-          tag: ${{ github.sha }}
+          tag: 'dev-${{ github.sha }}'
           token: ${{ secrets.GITHUB_TOKEN }}
