@@ -6,6 +6,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v4
@@ -20,3 +22,16 @@ jobs:
           filename: '${{ github.event.repository.name }}.zip'
           exclusions: '/.git/* /.github/* /node_modules/*'
       - run: ls -la ${{ github.workspace }}
+      - uses: notiz-dev/github-action-json-property@release
+        id: version
+        with:
+          path: 'package.json'
+          prop_path: 'version'
+      - uses: ncipollo/release-action@v1.21.0
+        with:
+          artifacts: '${{ github.event.repository.name }}.zip'
+          commit: main
+          name: '${{steps.version.outputs.prop}} dev build'
+          prerelease: true
+          tag: ${{ github.sha }}
+          token: ${{ secrets.GITHUB_TOKEN }}
