@@ -18,5 +18,5 @@ jobs:
         with:
           type: 'zip'
           filename: '${{ github.event.repository.name }}.zip'
-          exclusions: '/.git /.github /node_modules
+          exclusions: '/.git /.github /node_modules'
       - run: ls -la ${{ github.workspace }}
